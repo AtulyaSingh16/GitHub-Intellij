@@ -1,31 +1,33 @@
 import java.util.Scanner;
 class InvalidEmailException extends Exception
 {
-    public InvalidEmailException (String message)
+    InvalidEmailException(String message)
     {
         super(message);
     }
 }
-public class ExceptionalHandling17 {
+public class ExceptionalHandling17
+{
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter email : ");
-        String email = input.nextLine();
+        System.out.println("Enter email id : ");
+        String email= input.nextLine();
         try
         {
             validateEmail(email);
-            System.out.println("Email id is valid !");
+            System.out.println("Email is valid : "+email);
         }
-        catch(InvalidEmailException e)
+        catch (InvalidEmailException e)
         {
             System.out.println("Error : "+e.getMessage());
         }
     }
-    static void validateEmail(String email)
+
+    static void validateEmail(String email) throws InvalidEmailException
     {
         if(email==null||!email.contains("@"))
         {
-            throw new InvalidEmailException("Invalid email format ! ");
+            throw new InvalidEmailException("Invalid email format");
         }
     }
 }
