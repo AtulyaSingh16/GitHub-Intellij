@@ -14,7 +14,7 @@ public class Iteration5 {
             {
                 iterator.set("X");
             }
-            System.out.println("List : "+list);
         }
+        System.out.println("List : "+list);
     }
 }
